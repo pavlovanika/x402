@@ -117,6 +117,25 @@ The following outlines the flow of a payment using the `x402` protocol. Note tha
 
 12. `Resource server` returns a `200 OK` response to the `Client` with the resource they requested as the body of the HTTP response, and a `PAYMENT-RESPONSE` header containing the `Settlement Response` as Base64 encoded JSON if the payment was executed successfully.
 
+## Local development
+
+This repository contains multiple SDKs and examples (TypeScript, Python, Go, Java).
+
+### Package manager
+The repo includes lockfiles (`package-lock.json` and `pnpm-lock.yaml`). Use one package manager consistently:
+
+- **pnpm**:
+  - `pnpm install`
+  - `pnpm -r build` (if the workspace scripts exist)
+- **npm**:
+  - `npm ci`
+  - `npm run build`
+
+### Quick sanity check (optional)
+Run the preflight script to verify you have the common prerequisites installed:
+
+```bash
+bash scripts/preflight.sh
 ### Schemes
 
 A scheme is a logical way of moving money.
